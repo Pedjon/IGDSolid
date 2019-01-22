@@ -1,0 +1,60 @@
+//Exemplo de Geometria
+//OCP
+
+public class Retangulos
+{
+   ...
+}
+
+public class CalculaAreaTotal
+{	
+	//Problemas com OCP
+    public double Area(Retangulos retangulos){
+		
+		...
+		for(){
+			//Se quisermos calcular a area com outros objetos geometricos, teremos que alterar o código pré existente.
+			area += retangulos[i].getX + retangulos[i].getY
+		}
+		
+		return area;
+	}
+}
+
+
+
+//Correção
+public abstract class ObjetoGeometrico
+{
+    public abstract double Area();
+}
+
+
+public class Rectangle extends ObjetoGeometrico
+{
+	...
+	
+    public double Area()
+    {
+        return x*y;
+    }
+}
+
+public class Circle extends ObjetoGeometrico
+{
+    ...
+    public double Area()
+    {
+        return r*r*Math.PI;
+    }
+}
+
+public double Area(ObjetoGeometrico[] objetoGeometricos)
+{
+    ...
+	for(){
+        area += objetoGeometrico.Area();
+    }
+
+    return area;
+}
