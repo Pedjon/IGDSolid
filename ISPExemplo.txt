@@ -1,0 +1,55 @@
+//Exemplo animais e brinquedos
+//ISP
+
+interface Faz(){
+	public void emiteSom();
+	public void come();
+}
+
+class Cao implementes Faz{
+	public void emiteSom(){
+		...
+	}
+	
+	public void come(){
+		...
+	}
+}
+
+class PatoDeBorracha implementes Faz{
+	public void emiteSom(){
+		...
+	}
+	
+//			Problemas com ISP
+	public void come(){
+		...
+	}
+}
+
+
+
+//Correção
+interface Emite(){
+	public void som();
+}
+
+interface Alimenta(){
+	public void come();
+}
+
+class Cao implementes Emite, Alimenta{
+	public void som(){
+		...
+	}
+	
+	public void come(){
+		...
+	}
+}
+
+class PatoDeBorracha implementes Emite{
+	public void som(){
+		...
+	}
+}

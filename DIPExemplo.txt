@@ -1,0 +1,44 @@
+//Exemplo animais e brinquedos
+//DIP
+
+class GerenciaBD{
+	...
+	
+	public GerenciaBD(Valores valores, Logs log){
+		this.valores = valores;
+		this.log = log;
+	}
+	
+	public gravaNoBanco(){
+		...
+//			Problemas com DIP
+		log.sendLog();
+		valores.gravar();
+		
+		...
+	}
+}
+
+
+//Correção
+class GerenciaBD{
+	...
+	
+	public GerenciaBD(Valores valores, Logs log){
+		this.valores = valores;
+		this.log = log;
+	}
+	
+	public gravaNoBanco(){
+		...
+		valores.gravar();
+		...
+	}
+}
+
+
+interface LogAposGravacao {
+	void sendLog();
+}
+
+...

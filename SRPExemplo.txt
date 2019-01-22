@@ -1,0 +1,25 @@
+//Exemplo da Torre de Hanoi
+//SRP
+class Hastes{
+	
+	public Hastes(){
+		...
+	}
+	//Pouca coesão
+	public void moveDiscos(Disco disco){
+		...
+	}
+}
+
+//Correção
+class Hastes {
+	public Hastes(){
+		...
+	}
+}
+//Boa coesão
+class MoveDiscos{
+	public void move(Disco disco){
+		...
+	}
+}

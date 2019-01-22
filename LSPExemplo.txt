@@ -1,0 +1,49 @@
+//Exemplo Geométrico
+//LSP
+
+class Retangulo{
+	
+	private int x;
+	private int y;
+	
+  	public Retangulo(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+	...
+	
+}
+//					Problemas com LSP
+class Quadrado extends Retangulo {
+	private int x;
+  
+  	public Quadrado (int x){
+    	this.x = x;
+    }
+	...
+}
+
+
+
+//Correção
+class Retangulo{
+	
+	private int x;
+	private int y;
+	
+  	public Retangulo(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+	...
+	
+}
+
+class Quadrado{
+	private int x;
+  
+  	public Quadrado (int x){
+    	this.x = x;
+    }
+	...
+}
